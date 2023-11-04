@@ -66,7 +66,7 @@ const create = async (req, res) => {
             nombre: req.body.nombre,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, saltosBycript),
-            //createdBy: req.usuario._id    si pongo este fragmento de código ya no agarra el post
+            createdBy: req.usuario._id   
         });
 
         await usuario.save();
@@ -191,7 +191,7 @@ module.exports = {
     index,
     getById,
     create,
-    delete: deleteFisico,
+    delete: deleteLogico,
     updateParcial,
     updateCompleto
 }
